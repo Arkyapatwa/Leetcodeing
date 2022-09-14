@@ -8,26 +8,25 @@ class Solution:
         """
         Do not return anything, modify head in-place instead.
         """
-        slow, fast = head, head
+        slow=head
+        fast=head
         while fast.next and fast.next.next:
-            slow = slow.next
-            fast = fast.next.next
-        
-        #step 2: reverse second half
-        prev, curr = None, slow.next
-        while curr:
-            nextt = curr.next
-            curr.next = prev
-            prev = curr
-            curr = nextt    
-        slow.next = None
-        
-        #step 3: merge lists
-        head1, head2 = head, prev
-        while head2:
-            nextt = head1.next
-            head1.next = head2
-            head1 = head2
-            head2 = nextt
+            slow=slow.next
+            fast=fast.next.next
+        prev=None
+        cur=slow.next
+        while cur:
+            nex=cur.next
+            cur.next=prev
+            prev=cur
+            cur=nex
+        slow.next=None
+        list1=head
+        list2=prev
+        while list2:
+            nex=list1.next
+            list1.next=list2
+            list1=list2
+            list2=nex
 
         
