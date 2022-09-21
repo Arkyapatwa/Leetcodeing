@@ -17,13 +17,9 @@ class Solution:
             
             if nums[i]%2==0 and flag==0:
                 s+=nums[i]
-                res.append(s)
             elif nums[i]%2==0 and flag==1:
                 s+=query[0]
-                res.append(s)
             elif nums[i]%2!=0 and flag==1:
                 s-=temp
-                res.append(s)
-            else:
-                res.append(s)
+            res.append(s)
         return res
